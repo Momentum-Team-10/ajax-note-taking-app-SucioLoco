@@ -1,12 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Notes</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+  <script src="main.js" defer></script>
+  <title>Notes for Pros</title>
 </head>
+
 <body>
-  
+  <h1>Notes</h1>
+  <form id="note-form">
+    <div class="form-field">
+      <input id="note-text" type="text" placeholder="Enter your notes here" required />
+    </div>
+    <div class="form-field">
+      <button id="save-note" type="submit">
+        Save Note
+      </button>
+    </div>
+  </form>
+  <section id="note">
+    <ul id="note-list"></ul>
+  </section>
 </body>
+
 </html>
