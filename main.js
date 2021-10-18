@@ -5,13 +5,14 @@ const url = `http://localhost:3000/notes/`
 const noteList = document.getElementById('note-list')
 
 // Grab the form element from the DOM
-const form = document.querySelector('note-form')
+const form = document.getElementById('note-form')
 
 // Have form element listen for a submit event
 // Once submit event is triggered, render my newly created todo item on the DOM
 form.addEventListener('submit', (event) => {
     event.preventDefault()
-    const noteText = document.getElementByClass('form-field').value
+    const noteText = document.getElementById('note-text').value
+    console.log(noteText)
     createNote(noteText)
     // Clear form after a note has been created
     form.reset()
@@ -20,6 +21,7 @@ form.addEventListener('submit', (event) => {
 // Creates a li to hold the body of notes
 function renderNewNote(noteObj) {
     const li = document.createElement('li')
+    console.log(noteObj)
 // make the id of the li element the id of my todo object
     li.id = noteObj.id
     renderNewNote(li, noteObj)
@@ -60,8 +62,9 @@ function createNote(noteText) {
         })
     })
         .then(res => res.json())
-        .then(data => renderNoteText(data))
-}
+        .then(data => {renderNoteText(data)})
+        console.log(data)
+        }
 
 
 // DELETE request: delete a todo based on id
